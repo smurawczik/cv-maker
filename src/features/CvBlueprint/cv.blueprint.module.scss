@@ -1,0 +1,17 @@
+.cvBlueprint {
+  display: block;
+  border: 1px solid black;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  .cvBlueprint {
+    display: block !important;
+  }
+
+  @page {
+    size: auto;
+    margin: 0;
+  }
+}
