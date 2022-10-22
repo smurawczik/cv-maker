@@ -1,10 +1,10 @@
-import { CvBlueprint } from "./features/CvBlueprint/components/CvBlueprint";
 import classes from "./App.module.scss";
+import { Cv } from "./features/CvBlueprint/components/Cv";
 
 function App() {
   return (
     <div className={classes.app}>
-      <CvBlueprint />
+      <Cv />
     </div>
   );
 }
