@@ -9,20 +9,41 @@ export const CV_SIZES = {
   },
 };
 
-export type CvElement =
+export type SectionChild =
   | {
-      type: "text";
-      content: string;
+      type: "image";
+      blobURL: string;
     }
   | {
-      type: "list";
-      content: string[];
+      type: "job";
+      title: string;
+      description?: string;
+      tasks?: string[];
+      from: Date;
+      to?: Date;
+      actualJob?: boolean;
     }
   | {
-      type: "link";
-      linkText: string;
-      link: string;
+      type: "skill";
+      skillName: string;
+      level: number;
     };
+
+export type FullWidthSection = {
+  type: "full-width-section";
+  fullWidth: true;
+  children: SectionChild[];
+};
+
+export type SplitSection = {
+  type: "split-section";
+  left: number;
+  right: number;
+  leftChild: SectionChild;
+  rightChild: SectionChild;
+};
+
+export type Section = FullWidthSection | SplitSection;
 
 export interface CvBlueprintState {
   size: {
@@ -30,5 +51,5 @@ export interface CvBlueprintState {
     height: number;
   };
   paper: keyof typeof CV_SIZES;
-  elements: CvElement[];
+  blueprint: Section[];
 }

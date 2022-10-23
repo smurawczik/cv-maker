@@ -1,4 +1,4 @@
-import { CvBlueprint } from "./CvBlueprint";
+import { CvBlueprint } from "./CvBlueprint/CvBlueprint";
 import { CvSize } from "./CvSize";
 
 export const Cv = () => {
